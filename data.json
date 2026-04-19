@@ -1,0 +1,55 @@
+{
+  "navbar": {
+    "logoFirst": "DANU",
+    "logoLast": "SEPTI.",
+    "menu": [
+      { "label": "Home", "link": "#home" },
+      { "label": "About", "link": "#about" },
+      { "label": "Skills", "link": "#skills" },
+      { "label": "Projects", "link": "#projects" },
+      { "label": "Contact", "link": "#contact" }
+    ]
+  },
+  "hero": {
+    "welcomeText": "WELCOME TO MY WORLD",
+    "name": "Saya Danu Septi Adi",
+    "typingWords": ["Software Developer", "Automation Specialist", "Trading System Analyst"],
+    "description": "Informatics Engineering Graduate & Developer yang berfokus pada otomatisasi cerdas dan pengembangan web modern.",
+    "buttonText": "Lihat Portofolio",
+    "buttonLink": "#projects"
+  },
+  "about": {
+    "image": "danu.png",
+    "paragraphs": [
+      "Lulusan Teknik Informatika yang memiliki passion tinggi dalam dunia software development dan data automation. Berpengalaman dalam membangun skrip otomatisasi menggunakan Python dan JavaScript.",
+      "Saya percaya bahwa efisiensi adalah kunci dari teknologi masa depan. Mari berkolaborasi untuk menciptakan solusi digital yang inovatif!"
+    ],
+    "cvLink": "#"
+  },
+  "skills": [
+    { "name": "JavaScript / Puppeteer", "percent": "85%" },
+    { "name": "Python (Telethon/Automation)", "percent": "90%" },
+    { "name": "HTML & Modern CSS", "percent": "90%" },
+    { "name": "MT5 Expert Advisor Logic", "percent": "80%" }
+  ],
+  "projects": [
+    {
+      "title": "Auto-Reg Bot",
+      "desc": "Skrip otomatisasi pendaftaran akun menggunakan Puppeteer dengan fitur bypass captcha.",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
+      "link": "#"
+    },
+    {
+      "title": "Trading Advisor",
+      "desc": "Expert Advisor untuk MT5 dengan strategi Trend Following dan Aggressive Compounding.",
+      "image": "https://images.unsplash.com/photo-1634704784915-aacf363b021f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "link": "#"
+    },
+    {
+      "title": "CPNS Prep Bot",
+      "desc": "Telegram bot edukasi yang menghasilkan simulasi soal secara otomatis.",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
+      "link": "#"
+    }
+  ]
+}
