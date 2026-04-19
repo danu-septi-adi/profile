@@ -37,6 +37,12 @@
   ],
   "projects": [
     {
+      "title": "Web Automation Builder",
+      "desc": "Tools berbasis web untuk membuat script otomatisasi browser secara visual.",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
+      "link": "https://danu-septi-adi.github.io/automation-builder/"
+    },
+    {
       "title": "Auto-Reg Bot",
       "desc": "Skrip otomatisasi pendaftaran akun menggunakan Puppeteer dengan fitur bypass captcha.",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
