@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Danu Septi Adi | Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -18,245 +18,152 @@
             --text-light: #f8fafc;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+        /* RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { 
+            background: var(--bg-dark); 
+            color: var(--text-light); 
+            scroll-behavior: smooth; 
+            overflow-x: hidden; 
+            touch-action: manipulation; /* Optimasi untuk Android */
         }
-
-        body {
-            background: var(--bg-dark);
-            color: var(--text-light);
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
         a { text-decoration: none; color: inherit; }
+        .container { width: 90%; max-width: 1100px; margin: auto; }
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
+        /* --- WATER SYSTEM (BALL & SPLASH) --- */
+        #water-ball {
+            width: 30px; height: 30px;
+            background: rgba(56, 189, 248, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            position: fixed; top: 0; left: 0;
+            border-radius: 50%; pointer-events: none; z-index: 10001;
+            box-shadow: 0 0 20px var(--primary), inset 0 0 10px white;
+            backdrop-filter: blur(4px); transition: transform 0.1s ease-out; display: none;
+        }
+        .splash {
+            position: fixed; pointer-events: none; z-index: 10000;
+            border: 2px solid var(--primary); border-radius: 50%;
+            transform: translate(-50%, -50%); animation: waterSplash 0.6s ease-out forwards;
+        }
+        .drop {
+            position: fixed; width: 6px; height: 6px; background: var(--primary);
+            border-radius: 50%; pointer-events: none; z-index: 10000;
+            animation: dropOut 0.6s ease-out forwards;
+        }
+        @keyframes waterSplash {
+            0% { width: 0; height: 0; opacity: 1; border-width: 4px; }
+            100% { width: 120px; height: 120px; opacity: 0; border-width: 1px; }
+        }
+        @keyframes dropOut {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
         }
 
-        /* NAVBAR */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            padding: 20px 0;
-            transition: 0.4s;
-            z-index: 1000;
-        }
-
-        nav.scrolled {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 12px 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
+        /* --- NAVBAR WITH GRADIENT BORDER --- */
+        nav { position: fixed; width: 100%; top: 0; padding: 20px 0; transition: 0.4s; z-index: 1000; }
+        nav.scrolled { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); padding: 12px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 700; font-size: 1.5rem; letter-spacing: 1px; }
         .logo span { color: var(--primary); }
-
-        nav ul { display: flex; gap: 30px; }
-        nav ul li { list-style: none; }
-        nav ul li a { 
-            font-weight: 500; 
-            transition: 0.3s; 
+        
+        nav ul { display: flex; gap: 15px; list-style: none; }
+        nav ul li a {
+            position: relative;
+            padding: 8px 18px;
+            font-weight: 500;
+            transition: 0.3s;
             opacity: 0.8;
+            z-index: 1;
+            display: inline-block;
         }
         nav ul li a:hover { opacity: 1; color: var(--primary); }
-
-        /* HERO */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
-                        linear-gradient(135deg, #0f172a, #1e293b);
-        }
-
-        .hero h1 { font-size: 3.5rem; line-height: 1.2; }
-        .typing { color: var(--primary); min-height: 1.2em; display: block; }
-
-        .btn {
-            margin-top: 30px;
-            display: inline-block;
-            padding: 14px 32px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border-radius: 50px;
-            font-weight: 600;
-            transition: 0.4s;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(56,189,248,0.4);
-        }
-
-        /* ABOUT */
-        section { padding: 120px 0; }
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
+        
+        /* Gradient Rounded Border Animation */
+        nav ul li a::before {
+            content: "";
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            inset: 0;
+            border-radius: 50px;
+            padding: 2px; /* Tebal border */
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+        nav ul li a:hover::before { opacity: 1; transform: scale(1); }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-            align-items: center;
-        }
+        /* --- HERO SECTION --- */
+        .hero { height: 100vh; display: flex; align-items: center; background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent), linear-gradient(135deg, #0f172a, #1e293b); }
+        .hero h1 { font-size: 3.5rem; line-height: 1.2; margin: 10px 0; }
+        .typing { color: var(--primary); min-height: 1.2em; font-weight: 600; font-size: 1.5rem; }
 
-        .about-img {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
+        .btn { margin-top: 30px; display: inline-block; padding: 14px 32px; background: linear-gradient(45deg, var(--primary), var(--secondary)); border-radius: 50px; font-weight: 600; transition: 0.4s; border: none; color: white; cursor: pointer; position: relative; z-index: 10; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(56,189,248,0.4); }
 
-        .about-img img { width: 100%; display: block; transition: 0.5s; }
-        .about-img:hover img { transform: scale(1.05); }
+        /* --- SECTIONS --- */
+        section { padding: 100px 0; }
+        .section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--primary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        .about-content { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; }
+        .about-img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
+        .about-img img { width: 100%; display: block; }
 
         /* SKILLS */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .skill { margin-bottom: 25px; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; }
-        .progress { background: #334155; border-radius: 20px; height: 12px; }
-        .progress-bar {
-            height: 100%;
-            width: 0;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 20px;
-            transition: 1.5s cubic-bezier(0.1, 0, 0.2, 1);
-        }
+        .progress { background: #334155; border-radius: 20px; height: 12px; overflow: hidden; }
+        .progress-bar { height: 100%; width: 0; background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: 1.5s ease-in-out; }
 
-        /* PROJECTS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: 0.4s;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .card-img { height: 200px; overflow: hidden; }
-        .card-img img { width: 100%; height: 100%; object-fit: cover; }
+        /* PROJECTS (FIXED IMAGE BOX) */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--bg-card); border-radius: 20px; overflow: hidden; transition: 0.4s; border: 1px solid rgba(255,255,255,0.05); }
+        .card-img { height: 220px; width: 100%; overflow: hidden; background: #000; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .card:hover .card-img img { transform: scale(1.1); }
         .card-body { padding: 25px; }
-        .card h3 { margin-bottom: 10px; color: var(--primary); }
-        .card p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 20px; line-height: 1.6; }
-
-        .card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            border-color: var(--primary);
-        }
+        .card h3 { color: var(--primary); margin-bottom: 10px; }
+        .card p { font-size: 0.9rem; opacity: 0.8; line-height: 1.6; margin-bottom: 20px; }
 
         /* CONTACT */
-        .contact-wrapper {
-            max-width: 700px;
-            margin: auto;
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: 20px;
-        }
-
+        .contact-wrapper { max-width: 700px; margin: auto; background: var(--bg-card); padding: 40px; border-radius: 20px; }
         form { display: flex; flex-direction: column; gap: 20px; }
-        input, textarea {
-            padding: 15px;
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            color: white;
-            outline: none;
-            transition: 0.3s;
-        }
+        input, textarea { padding: 15px; background: #0f172a; border: 1px solid #334155; border-radius: 12px; color: white; outline: none; }
+        input:focus, textarea:focus { border-color: var(--primary); }
 
-        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(56,189,248,0.2); }
-        textarea { height: 150px; resize: none; }
-
-        /* BACK TO TOP */
-        #topBtn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: none;
-            cursor: pointer;
-            z-index: 100;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
+        #topBtn { position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; display: none; cursor: pointer; z-index: 100; }
 
         @media(max-width:768px){
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.2rem; }
             .about-content { grid-template-columns: 1fr; text-align: center; }
-            nav ul { display: none; } /* Idealnya buat hamburger menu */
+            nav ul { display: none; } /* Hide menu on mobile to keep it clean */
+            #water-ball { width: 45px; height: 45px; } /* Ball larger for fingers */
         }
     </style>
 </head>
-
 <body>
+
+<div id="water-ball"></div>
 
 <nav id="navbar">
     <div class="container">
-        <div class="logo">DANU<span>SEPTI.</span></div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="logo" id="nav-logo"></div>
+        <ul id="nav-menu"></ul>
     </div>
 </nav>
 
 <section class="hero" id="home">
     <div class="container">
         <div data-aos="fade-up">
-            <p style="color:var(--primary); font-weight: 600; letter-spacing: 2px;">WELCOME TO MY WORLD</p>
-            <h1>Saya Danu Septi Adi</h1>
-            <h2 class="typing"></h2>
-            <p style="max-width: 600px; margin-top: 15px; opacity: 0.8;">Informatics Engineering Graduate & Developer yang berfokus pada otomatisasi cerdas dan pengembangan web modern.</p>
-            <a href="#projects" class="btn">Lihat Portofolio <i class="fas fa-arrow-right" style="margin-left:8px"></i></a>
+            <p id="hero-welcome" style="color:var(--primary); font-weight: 600; letter-spacing: 2px;"></p>
+            <h1 id="hero-name"></h1>
+            <div class="typing"></div>
+            <p id="hero-desc" style="max-width: 600px; margin-top: 15px; opacity: 0.8;"></p>
+            <a id="hero-btn" href="" class="btn"></a>
         </div>
     </div>
 </section>
@@ -266,17 +173,12 @@
         <h2 class="section-title" data-aos="fade-up">About Me</h2>
         <div class="about-content">
             <div class="about-img" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60" alt="Danu Profile">
+                <img id="about-pfp" src="" alt="Danu Profile">
             </div>
             <div class="about-text" data-aos="fade-left">
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-                    Lulusan Teknik Informatika yang memiliki passion tinggi dalam dunia software development dan data automation. Berpengalaman dalam membangun skrip otomatisasi menggunakan Python dan JavaScript.
-                </p>
-                <p style="font-size: 1.1rem; line-height: 1.8;">
-                    Saya percaya bahwa efisiensi adalah kunci dari teknologi masa depan. Mari berkolaborasi untuk menciptakan solusi digital yang inovatif!
-                </p>
+                <div id="about-desc"></div>
                 <div style="margin-top: 30px;">
-                    <a href="#" class="btn" style="background: transparent; border: 2px solid var(--primary);">Download CV</a>
+                    <a id="cv-btn" href="#" target="_blank" class="btn" style="background: transparent; border: 2px solid var(--primary);">Download CV</a>
                 </div>
             </div>
         </div>
@@ -286,68 +188,14 @@
 <section id="skills">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
-        <div class="skills-grid">
-            <div data-aos="fade-right">
-                <div class="skill">
-                    <div class="skill-info"><span>JavaScript / Puppeteer</span><span>85%</span></div>
-                    <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info"><span>Python (Telethon/Automation)</span><span>90%</span></div>
-                    <div class="progress"><div class="progress-bar" data-width="90%"></div></div>
-                </div>
-            </div>
-            <div data-aos="fade-left">
-                <div class="skill">
-                    <div class="skill-info"><span>HTML & Modern CSS</span><span>90%</span></div>
-                    <div class="progress"><div class="progress-bar" data-width="90%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info"><span>MT5 Expert Advisor Logic</span><span>80%</span></div>
-                    <div class="progress"><div class="progress-bar" data-width="80%"></div></div>
-                </div>
-            </div>
-        </div>
+        <div class="skills-grid" id="skills-container"></div>
     </div>
 </section>
 
 <section id="projects">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="card" data-aos="flip-left">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop&q=60" alt="Automation Project">
-                </div>
-                <div class="card-body">
-                    <h3>Auto-Reg Bot</h3>
-                    <p>Skrip otomatisasi pendaftaran akun menggunakan Puppeteer dengan fitur bypass captcha dan integrasi temp-mail.</p>
-                    <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.8rem;">Detail</a>
-                </div>
-            </div>
-
-            <div class="card" data-aos="flip-left" data-aos-delay="100">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1611974714014-48fce8166546?w=500&auto=format&fit=crop&q=60" alt="Trading Bot">
-                </div>
-                <div class="card-body">
-                    <h3>Trading Advisor</h3>
-                    <p>Expert Advisor untuk MetaTrader 5 dengan strategi Trend Following dan Aggressive Compounding Money Management.</p>
-                    <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.8rem;">Detail</a>
-                </div>
-            </div>
-
-            <div class="card" data-aos="flip-left" data-aos-delay="200">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=500&auto=format&fit=crop&q=60" alt="Exam Bot">
-                </div>
-                <div class="card-body">
-                    <h3>CPNS Prep Bot</h3>
-                    <p>Telegram bot edukasi yang menghasilkan ribuan simulasi soal TIU/TKP secara otomatis berbasis JSON database.</p>
-                    <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.8rem;">Detail</a>
-                </div>
-            </div>
-        </div>
+        <div class="projects-grid" id="projects-container"></div>
     </div>
 </section>
 
@@ -356,9 +204,9 @@
         <h2 class="section-title">Let's Connect</h2>
         <div class="contact-wrapper">
             <form id="contactForm">
-                <input type="text" id="name" placeholder="Nama Lengkap" required>
-                <input type="email" id="email" placeholder="Alamat Email" required>
-                <textarea id="message" placeholder="Tuliskan pesan atau ajakan kolaborasi..." required></textarea>
+                <input type="text" placeholder="Nama Lengkap" required>
+                <input type="email" placeholder="Alamat Email" required>
+                <textarea placeholder="Tuliskan pesan..." required></textarea>
                 <button class="btn" type="submit">Kirim Pesan Sekarang</button>
             </form>
         </div>
@@ -370,67 +218,150 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-    AOS.init({ duration: 1000, once: true });
-
-    /* NAVBAR SCROLL EFFECT */
-    window.addEventListener("scroll", () => {
-        const nav = document.getElementById("navbar");
-        const topBtn = document.getElementById("topBtn");
-        
-        if(window.scrollY > 50) {
-            nav.classList.add("scrolled");
-        } else {
-            nav.classList.remove("scrolled");
-        }
-
-        topBtn.style.display = window.scrollY > 500 ? "block" : "none";
-    });
-
-    /* BACK TO TOP */
-    document.getElementById("topBtn").onclick = () => window.scrollTo({top:0, behavior:"smooth"});
-
-    /* TYPING EFFECT */
-    const textArr = ["Software Developer", "Automation Specialist", "Trading System Analyst"];
-    let i=0, j=0, currentText="", isDeleting=false;
-    
-    function typeEffect(){
-        currentText = textArr[i];
-        const typingElement = document.querySelector(".typing");
-        
-        if(!isDeleting) {
-            typingElement.textContent = currentText.substring(0, j+1);
-            j++;
-        } else {
-            typingElement.textContent = currentText.substring(0, j-1);
-            j--;
-        }
-
-        if(!isDeleting && j === currentText.length) {
-            isDeleting = true;
-            setTimeout(typeEffect, 1500);
-        } else if(isDeleting && j === 0) {
-            isDeleting = false;
-            i = (i + 1) % textArr.length;
-            setTimeout(typeEffect, 500);
-        } else {
-            setTimeout(typeEffect, isDeleting ? 50 : 100);
-        }
-    }
-    typeEffect();
-
-    /* SKILL ANIMATION TRIGGER */
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                const bars = entry.target.querySelectorAll(".progress-bar");
-                bars.forEach(bar => {
-                    bar.style.width = bar.dataset.width;
-                });
+    const App = {
+        async init() {
+            try {
+                // Fetch data dari JSON
+                const response = await fetch('./data.json');
+                const data = await response.json();
+                this.render(data);
+                
+                // Init animasi
+                AOS.init({ duration: 1000, once: true });
+                this.initTyping(data.hero.typingWords);
+                this.initSkillObserver();
+                this.initScrollEffects();
+                this.initWaterSystem(); 
+            } catch (err) {
+                console.error("Gagal load JSON:", err);
             }
-        });
-    }, { threshold: 0.5 });
+        },
 
-    observer.observe(document.getElementById("skills"));
+        render(data) {
+            // Navbar Render
+            document.getElementById('nav-logo').innerHTML = `${data.navbar.logoFirst}<span>${data.navbar.logoLast}</span>`;
+            document.getElementById('nav-menu').innerHTML = data.navbar.menu.map(m => `<li><a href="${m.link}">${m.label}</a></li>`).join('');
+
+            // Hero Render
+            document.getElementById('hero-welcome').innerText = data.hero.welcomeText;
+            document.getElementById('hero-name').innerText = data.hero.name;
+            document.getElementById('hero-desc').innerText = data.hero.description;
+            const hBtn = document.getElementById('hero-btn');
+            hBtn.innerText = data.hero.buttonText;
+            hBtn.href = data.hero.buttonLink;
+
+            // About Render
+            document.getElementById('about-pfp').src = data.about.image;
+            document.getElementById('about-desc').innerHTML = data.about.paragraphs.map(p => `<p style="margin-bottom: 15px; font-size: 1.1rem; line-height: 1.7;">${p}</p>`).join('');
+            document.getElementById('cv-btn').href = data.about.cvLink;
+
+            // Skills Render
+            document.getElementById('skills-container').innerHTML = data.skills.map(s => `
+                <div class="skill" data-aos="fade-up">
+                    <div class="skill-info"><span>${s.name}</span><span>${s.percent}</span></div>
+                    <div class="progress"><div class="progress-bar" data-width="${s.percent}"></div></div>
+                </div>
+            `).join('');
+
+            // Projects Render (FIXED IMAGE)
+            document.getElementById('projects-container').innerHTML = data.projects.map(p => `
+                <div class="card" data-aos="fade-up">
+                    <div class="card-img"><img src="${p.image}" alt="${p.title}"></div>
+                    <div class="card-body">
+                        <h3>${p.title}</h3>
+                        <p>${p.desc}</p>
+                        <a href="${p.link}" class="btn" style="padding: 8px 20px; font-size: 0.8rem;">Detail Project</a>
+                    </div>
+                </div>
+            `).join('');
+        },
+
+        initTyping(words) {
+            let i=0, j=0, isDeleting=false;
+            const el = document.querySelector(".typing");
+            function type() {
+                let current = words[i];
+                el.textContent = isDeleting ? current.substring(0, j-1) : current.substring(0, j+1);
+                j = isDeleting ? j - 1 : j + 1;
+                if(!isDeleting && j === current.length) { isDeleting = true; setTimeout(type, 2000); }
+                else if(isDeleting && j === 0) { isDeleting = false; i = (i + 1) % words.length; setTimeout(type, 500); }
+                else { setTimeout(type, isDeleting ? 40 : 80); }
+            }
+            type();
+        },
+
+        initSkillObserver() {
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.querySelectorAll(".progress-bar").forEach(bar => bar.style.width = bar.dataset.width);
+                    }
+                });
+            }, { threshold: 0.1 });
+            obs.observe(document.getElementById("skills"));
+        },
+
+        initScrollEffects() {
+            const nav = document.getElementById("navbar");
+            const topBtn = document.getElementById("topBtn");
+            window.addEventListener("scroll", () => {
+                window.scrollY > 50 ? nav.classList.add("scrolled") : nav.classList.remove("scrolled");
+                topBtn.style.display = window.scrollY > 600 ? "block" : "none";
+            });
+            topBtn.onclick = () => window.scrollTo({top:0, behavior:"smooth"});
+        },
+
+        initWaterSystem() {
+            const ball = document.getElementById('water-ball');
+            let mX = 0, mY = 0, bX = 0, bY = 0;
+
+            const moveHandler = (e) => {
+                ball.style.display = 'block';
+                const clientX = e.clientX || (e.touches ? e.touches[0].clientX : 0);
+                const clientY = e.clientY || (e.touches ? e.touches[0].clientY : 0);
+                mX = clientX; mY = clientY;
+            };
+
+            window.addEventListener('mousemove', moveHandler);
+            window.addEventListener('touchmove', moveHandler);
+
+            function lerp() {
+                bX += (mX - bX) * 0.15; bY += (mY - bY) * 0.15;
+                ball.style.transform = `translate(${bX - 15}px, ${bY - 15}px)`;
+                requestAnimationFrame(lerp);
+            }
+            lerp();
+
+            const createSplash = (e) => {
+                const x = e.clientX || (e.touches ? e.touches[0].clientX : mX);
+                const y = e.clientY || (e.touches ? e.touches[0].clientY : mY);
+
+                // Splash Ring
+                const ring = document.createElement('div');
+                ring.className = 'splash'; ring.style.left = x + 'px'; ring.style.top = y + 'px';
+                document.body.appendChild(ring);
+                setTimeout(() => ring.remove(), 600);
+
+                // Water Drops
+                for(let i=0; i<6; i++) {
+                    const d = document.createElement('div');
+                    d.className = 'drop'; d.style.left = x + 'px'; d.style.top = y + 'px';
+                    d.style.setProperty('--dx', (Math.random()-0.5)*120 + 'px');
+                    d.style.setProperty('--dy', (Math.random()-0.5)*120 + 'px');
+                    document.body.appendChild(d);
+                    setTimeout(() => d.remove(), 600);
+                }
+            };
+
+            window.addEventListener('mousedown', createSplash);
+            window.addEventListener('touchstart', (e) => {
+                moveHandler(e);
+                createSplash(e);
+            });
+        }
+    };
+
+    App.init();
 </script>
 
 </body>
