@@ -18,6 +18,9 @@
     "buttonText": "Lihat Portofolio",
     "buttonLink": "#projects"
   },
+  "contact": {
+    "whatsappNumber": "6289510713484" 
+  },
   "about": {
     "image": "danu.png",
     "paragraphs": [
