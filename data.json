@@ -19,14 +19,14 @@
       "Fullstack Developer",
       "System Administrator"
     ],
-    "description": "Lulusan Teknik Informatika ITATS yang berfokus pada pengembangan solusi otomatisasi cerdas, manajemen infrastruktur sistem, dan arsitektur perangkat lunak yang efisien.",
+    "description": "Sarjana Teknik Informatika yang adaptif dan berkomitmen tinggi pada hasil kerja optimal. Memiliki pengalaman kuat dalam Technical Support (Remote & On-site), User Training, dan Pengembangan Sistem. Terbiasa bekerja secara konsisten, bertanggung jawab, serta mahir menggunakan alat produktivitas digital untuk efisiensi operasional perusahaan.",
     "buttonText": "Eksplorasi Proyek",
     "buttonLink": "#projects"
   },
   "contact": {
     "whatsappNumber": "6289510713484",
     "telegramUsername": "danu_septi_adi",
-    "location": "Surabaya - Gresik, Indonesia"
+    "location": "Surabaya, Indonesia"
   },
   "about": {
     "image": "danu.png",
@@ -58,7 +58,7 @@
     },
     {
       "title": "CPNS Interactive Training Bot",
-      "desc": "Platform edukasi berbasis Telegram yang menggunakan pemrosesan data JSON dinamis untuk simulasi ujian TIU, membantu calon peserta melakukan tryout secara real-time.",
+      "desc": "Platform edukasi berbasis Telegram yang menggunakan pemrosesan data JSON dinamis untuk simulasi ujian CPNS, membantu calon peserta melakukan tryout secara real-time.",
       "image": "https://danu-septi-adi.github.io/profile/images/tryout-tg-bot.png",
       "link": "https://t.me/fun_tryout_bot"
     },
