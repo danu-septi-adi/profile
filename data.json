@@ -39,13 +39,13 @@
     {
       "title": "D-SYSTEM Web3 Hub",
       "desc": "Industrial Secure Infrastructure untuk Launching Token dan Manajemen Aset Digital.",
-      "image": "https://danu-septi-adi.github.io/web3/assets/images/test.png",
+      "image": "https://danu-septi-adi.github.io/profile/dsystem-hub.png",
       "link": "https://danu-septi-adi.github.io/web3/"
     },
     {
       "title": "Web Automation Builder",
       "desc": "Tools berbasis web untuk membuat script otomatisasi browser secara visual.",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
+      "image": "https://danu-septi-adi.github.io/automation-builder/assets/images/preview.png",
       "link": "https://danu-septi-adi.github.io/automation-builder/"
     },
     {
@@ -63,7 +63,7 @@
     {
       "title": "QUIZ telegram Bot",
       "desc": "Telegram bot edukasi yang menghasilkan simulasi soal secara otomatis.",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
+      "image": "https://danu-septi-adi.github.io/profile/tryout-tg-bot.png",
       "link": "https://t.me/fun_tryout_bot"
     }
   ]
