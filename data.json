@@ -36,12 +36,27 @@
     ],
     "cvLink": "#"
   },
-  "skills": [
-    { "name": "Backend Automation (Python/Telethon/Node.js)", "percent": "95%" },
-    { "name": "System Administration (IIS/Linux/Firewall)", "percent": "85%" },
-    { "name": "Algorithmic Trading (MQL5 Expert Advisor)", "percent": "85%" },
-    { "name": "Frontend Development (Three.js/Modern CSS)", "percent": "80%" },
-    { "name": "Database & API Design (Postman/GitHub)", "percent": "90%" }
+"skills": [
+    { 
+      "name": "Backend Automation (Node.js/Puppeteer/Python/Telethon)", 
+      "percent": "95%" 
+    },
+    { 
+      "name": "System Administration (IIS/Linux/Windows Firewall/Bash)", 
+      "percent": "85%" 
+    },
+    { 
+      "name": "Algorithmic Trading (MQL5 Expert Advisor/XAUUSD/DXY)", 
+      "percent": "90%" 
+    },
+    { 
+      "name": "Web Development (JavaScript/PHP/HTML/CSS)", 
+      "percent": "85%" 
+    },
+    { 
+      "name": "Database & API Design (Postman/MySQL/REST API/JWT)", 
+      "percent": "90%" 
+    }
   ],
   "projects": [
     {
