@@ -11,60 +11,68 @@
     ]
   },
   "hero": {
-    "welcomeText": "WELCOME TO MY WORLD",
+    "welcomeText": "WELCOME TO MY TECH PORTFOLIO",
     "name": "Saya Danu Septi Adi",
-    "typingWords": ["Software Developer", "Automation Specialist", "Trading System Analyst"],
-    "description": "Informatics Engineering Graduate & Developer yang berfokus pada otomatisasi cerdas dan pengembangan web modern.",
-    "buttonText": "Lihat Portofolio",
+    "typingWords": [
+      "Informatics Engineer",
+      "Automation Specialist",
+      "Fullstack Developer",
+      "System Administrator"
+    ],
+    "description": "Lulusan Teknik Informatika ITATS yang berfokus pada pengembangan solusi otomatisasi cerdas, manajemen infrastruktur sistem, dan arsitektur perangkat lunak yang efisien.",
+    "buttonText": "Eksplorasi Proyek",
     "buttonLink": "#projects"
   },
   "contact": {
-    "whatsappNumber": "6289510713484" 
+    "whatsappNumber": "6289510713484",
+    "telegramUsername": "danu_septi_adi",
+    "location": "Surabaya - Gresik, Indonesia"
   },
   "about": {
     "image": "danu.png",
     "paragraphs": [
-      "Lulusan Teknik Informatika yang memiliki passion tinggi dalam dunia software development dan data automation. Berpengalaman dalam membangun skrip otomatisasi menggunakan Python dan JavaScript.",
-      "Saya percaya bahwa efisiensi adalah kunci dari teknologi masa depan. Mari berkolaborasi untuk menciptakan solusi digital yang inovatif!"
+      "Saya adalah seorang Sarjana Teknik Informatika dari Institut Teknologi Adhi Tama Surabaya (ITATS) yang memiliki spesialisasi dalam menjembatani kebutuhan bisnis dengan solusi teknologi otomatis. Dengan rekam jejak dalam membangun sistem automasi berbasis Python dan Node.js, saya membantu meningkatkan efisiensi operasional melalui skalabilitas kode dan optimasi alur kerja.",
+      "Keahlian saya mencakup pengelolaan server (IIS & Linux), pengamanan jaringan melalui Windows Firewall, hingga pengembangan algoritma finansial (MQL5). Saya berdedikasi untuk menciptakan teknologi yang tidak hanya berfungsi, tetapi juga memberikan dampak nyata bagi pengguna dan organisasi."
     ],
     "cvLink": "#"
   },
   "skills": [
-    { "name": "JavaScript / Puppeteer", "percent": "85%" },
-    { "name": "Python (Telethon/Automation)", "percent": "90%" },
-    { "name": "HTML & Modern CSS", "percent": "90%" },
-    { "name": "MT5 Expert Advisor Logic", "percent": "80%" }
+    { "name": "Backend Automation (Python/Telethon/Node.js)", "percent": "95%" },
+    { "name": "System Administration (IIS/Linux/Firewall)", "percent": "85%" },
+    { "name": "Algorithmic Trading (MQL5 Expert Advisor)", "percent": "85%" },
+    { "name": "Frontend Development (Three.js/Modern CSS)", "percent": "80%" },
+    { "name": "Database & API Design (Postman/GitHub)", "percent": "90%" }
   ],
   "projects": [
     {
-      "title": "D-SYSTEM Web3 Hub",
-      "desc": "Industrial Secure Infrastructure untuk Launching Token dan Manajemen Aset Digital.",
-      "image": "https://danu-septi-adi.github.io/profile/images/dsystem-hub.png",
-      "link": "https://danu-septi-adi.github.io/web3/"
-    },
-    {
-      "title": "Web Automation Builder",
-      "desc": "Tools berbasis web untuk membuat script otomatisasi browser secara visual.",
+      "title": "Automation-Builder Platform",
+      "desc": "Arsitek sistem untuk pembuatan skrip otomatisasi browser secara visual. Proyek ini mempermudah pengguna dalam membangun alur kerja otomatis tanpa perlu menulis kode dari awal.",
       "image": "https://danu-septi-adi.github.io/automation-builder/assets/images/preview.png",
       "link": "https://danu-septi-adi.github.io/automation-builder/"
     },
     {
-      "title": "Auto-Reg Bot",
-      "desc": "Skrip otomatisasi pendaftaran akun menggunakan Puppeteer dengan fitur bypass captcha.",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
-      "link": "#"
+      "title": "D-SYSTEM Web3 Infrastructure",
+      "desc": "Infrastruktur aman untuk manajemen aset digital dan monitoring balance kripto otomatis. Mengintegrasikan API untuk efisiensi pelacakan transaksi pada ekosistem Web3.",
+      "image": "https://danu-septi-adi.github.io/profile/images/dsystem-hub.png",
+      "link": "https://danu-septi-adi.github.io/web3/"
     },
     {
-      "title": "Trading Advisor",
-      "desc": "Expert Advisor untuk MT5 dengan strategi Trend Following dan Aggressive Compounding.",
-      "image": "https://images.unsplash.com/photo-1634704784915-aacf363b021f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "link": "#"
-    },
-    {
-      "title": "QUIZ telegram Bot",
-      "desc": "Telegram bot edukasi yang menghasilkan simulasi soal secara otomatis.",
+      "title": "CPNS Interactive Training Bot",
+      "desc": "Platform edukasi berbasis Telegram yang menggunakan pemrosesan data JSON dinamis untuk simulasi ujian TIU, membantu calon peserta melakukan tryout secara real-time.",
       "image": "https://danu-septi-adi.github.io/profile/images/tryout-tg-bot.png",
       "link": "https://t.me/fun_tryout_bot"
+    },
+    {
+      "title": "Advanced Algorithmic Trading",
+      "desc": "Pengembangan Expert Advisor (EA) untuk instrumen Gold (XAUUSD) menggunakan strategi Trend Following dan Compounding Agresif dengan manajemen risiko yang terukur.",
+      "image": "https://danu-septi-adi.github.io/profile/images/EA-trading.png",
+      "link": "#"
+    },
+    {
+      "title": "3D Combat Mechanics Engine",
+      "desc": "Eksperimen pengembangan game berbasis web menggunakan Three.js untuk menciptakan logika pertarungan stickman dalam lingkungan 3D yang interaktif.",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop",
+      "link": "#"
     }
   ]
 }
