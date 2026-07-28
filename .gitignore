@@ -1,0 +1,29 @@
+# === OS Files ===
+Thumbs.db
+.DS_Store
+desktop.ini
+*.swp
+*.swo
+*~
+
+# === Editor / IDE ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === Claude ===
+.claude/
+
+# === Logs ===
+*.log
+npm-debug.log*
+
+# === Environment ===
+.env
+.env.local
+.env.*.local
+
+# === Dependencies (if any future) ===
+node_modules/
+vendor/
