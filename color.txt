@@ -1,0 +1,32 @@
+Saya sudah menyelesaikan semua perubahan! Berikut ringkasannya:
+
+## ✅ Yang sudah diupdate di `index.html`:
+
+**CSS Variables (root):**
+| Variable | Old | New |
+|---|---|---|
+| `--primary` | `#a855f7` | `#C084FC` — lebih soft & mewah |
+| `--secondary` | `#7c3aed` | `#8B5CF6` — violet yang lebih kaya |
+| `--bg-dark` | `#09090f` | `#07060B` — lebih deep (hampir hitam-ungu) |
+| `--bg-card` | `#1c1828` | `#120E1A` — dark plum yang elegan |
+
+**Variable baru ditambahkan:**
+- `--accent: #6D28D9` — royal purple
+- `--accent-deep: #4C1D95` — deep amethyst
+- `--bg-surface: #1A1528` — untuk progress bar, input
+- `--text-muted: #A89BB5` — muted lilac untuk teks sekunder
+- `--premium-gold: #D4A373` — aksen gold opsional
+- `--glow-purple` & `--glow-deep` — efek glow
+
+**Semua referensi warna hardcoded** di CSS, overlay, water ball, progress bar, card, gradient, dan Three.js 3D background sudah diupdate.
+
+## ✅ File `color.txt` tersimpan
+
+Berisi dokumentasi lengkap palet **"Royal Amethyst"** dengan kode hex, RGB, HSL, nama, penggunaan, dan gradient siap pakai.
+
+## Konsep warnanya:
+Nuansa ungu yang dipilih mengarah ke **amethyst/lavender premium** — kesan mewah didapat dari:
+- Perpaduan ungu soft (`#C084FC`) dengan ungu deep (`#6D28D9`, `#4C1D95`) — mirip gradien batu amethyst asli
+- Background hampir hitam dengan undertone ungu — bukan hitam netral
+- Glow yang memberikan efek "mystical/tech" bukan sekadar terang
+- Opsi gold accent untuk sentuhan royal

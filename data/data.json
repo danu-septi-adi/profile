@@ -19,9 +19,49 @@
       "Fullstack Developer",
       "System Administrator"
     ],
+    "syntaxWords": [
+      "learn();",
+      "buildHabit(true)",
+      "focus = deepWork();",
+      "if (problem) solve();",
+      "system.admin();",
+      "trade.discipline();"
+    ],
     "description": "Sarjana Teknik Informatika yang merancang sistem otomatis, mengelola infrastruktur server, dan membangun solusi backend skalabel — dari Python, Node.js, hingga MQL5. Bekerja untuk dampak nyata, bukan sekadar kode berjalan.",
     "buttonText": "Lihat Proyek Saya",
     "buttonLink": "#projects"
+  },
+  "syntax": {
+    "heroItems": [
+      { "text": "learn();", "icon": "fa-graduation-cap", "cls": "syntax-float--alt" },
+      { "text": "buildHabit(true)", "icon": "fa-heart", "cls": "syntax-float--ghost" },
+      { "text": "focus = deepWork();", "icon": "fa-bullseye", "cls": "syntax-float--alt" },
+      { "text": "if (problem) solve();", "icon": "fa-screwdriver-wrench", "cls": "syntax-float--ghost" },
+      { "text": "system.admin();", "icon": "fa-server", "cls": "syntax-float--alt" },
+      { "text": "trade.discipline();", "icon": "fa-chart-line", "cls": "syntax-float--ghost" }
+    ],
+    "sections": {
+      "about": [
+        { "text": "const me = { discipline: true }", "icon": "fa-user-astronaut" },
+        { "text": "purpose = lifelongLearning", "icon": "fa-seedling" },
+        { "text": "health && family && growth", "icon": "fa-people-roof" }
+      ],
+      "skills": [
+        { "text": "const skills = ['Automation','Backend','SysAdmin']", "icon": "fa-code" },
+        { "text": "optimize().then(scale)", "icon": "fa-gears" },
+        { "text": "debug(); // until it works", "icon": "fa-bug" }
+      ],
+      "projects": [
+        { "text": "deployFeature()", "icon": "fa-rocket" },
+        { "text": "shipWithCare()", "icon": "fa-truck-fast" },
+        { "text": "createValue()", "icon": "fa-gem" }
+      ],
+      "contact": [
+        { "text": "let'sConnect();", "icon": "fa-paper-plane" },
+        { "text": "collaborate += 1", "icon": "fa-handshake" },
+        { "text": "message = 'open for work'", "icon": "fa-message" }
+      ]
+    }
   },
   "contact": {
     "whatsappNumber": "6289612815852",
@@ -29,7 +69,7 @@
     "location": "Surabaya, Indonesia"
   },
   "about": {
-    "image": "images/assets/danu.avif",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop&sat=-35&exp=8",
     "paragraphs": [
       "Lulusan Teknik Informatika ITATS yang percaya bahwa teknologi terbaik adalah yang bekerja otomatis di belakang layar. Saya spesialis dalam menjembatani kebutuhan bisnis dengan solusi teknis — membangun pipeline automasi berbasis Python & Node.js, mengelola server IIS/Linux, dan merancang algoritma finansial di MQL5.",
       "Dari menulis kode hingga mengamankan jaringan, pendekatan saya selalu sama: efisien, terukur, dan berorientasi hasil. Setiap sistem yang saya bangun adalah alat yang betul-betul dipakai — bukan sekadar eksperimen."
@@ -62,55 +102,55 @@
     {
       "title": "Automation-Builder Platform",
       "desc": "Visual automation script builder — pengguna bisa merancang alur kerja browser otomatis tanpa menulis satu baris kode pun. Drag, drop, dan deploy.",
-      "image": "https://danu-septi-adi.github.io/automation-builder/assets/images/preview.png",
+      "image": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1200&auto=format&fit=crop&sat=-30&exp=10",
       "link": "https://danu-septi-adi.github.io/automation-builder/"
     },
     {
       "title": "D-SYSTEM Web3 Infrastructure",
       "desc": "Infrastruktur aman untuk manajemen aset digital dan monitoring saldo kripto secara real-time via API. Dirancang untuk efisiensi dan transparansi penuh.",
-      "image": "https://danu-septi-adi.github.io/profile/images/dsystem-hub.png",
+      "image": "https://images.unsplash.com/photo-1516245834210-c4c142787335?q=80&w=1200&auto=format&fit=crop&sat=-30&exp=10",
       "link": "https://danu-septi-adi.github.io/web3/"
     },
     {
       "title": "CPNS Interactive Training Bot",
       "desc": "Bot Telegram interaktif untuk simulasi ujian CPNS — ribuan soal, skor real-time, dan pembahasan instan. Belajar jadi lebih fleksibel dan seru.",
-      "image": "https://danu-septi-adi.github.io/profile/images/tryout-tg-bot.png",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop&sat=-35&exp=10",
       "link": "https://t.me/fun_tryout_bot"
     },
     {
       "title": "Advanced Algorithmic Trading",
       "desc": "Expert Advisor (EA) untuk trading Gold (XAUUSD) dengan strategi Trend Following + Compounding Agresif. Risk management terukur, performa optimal.",
-      "image": "https://danu-septi-adi.github.io/profile/images/EA-trading.png",
+      "image": "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=1200&auto=format&fit=crop&sat=-35&exp=10",
       "link": "#"
     },
     {
       "title": "3D Combat Mechanics Engine",
       "desc": "Eksperimen game engine berbasis web dengan Three.js — logika pertarungan stickman 3D yang interaktif dan real-time. Pure JavaScript, no dependencies.",
-      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop&sat=-35&exp=10",
       "link": "#"
     },
     {
       "title": "Club Valiving Bali",
       "desc": "Platform membership eksklusif untuk villa & club di Bali — sistem autentikasi, manajemen paket membership, dan dashboard member terintegrasi. Dibangun dengan Laravel & Nuxt.js.",
-      "image": "https://club.valivingbali.com/favicon.png",
+      "image": "https://images.unsplash.com/photo-1502672023488-70e25813eb80?q=80&w=1200&auto=format&fit=crop&sat=-30&exp=10",
       "link": "https://club.valivingbali.com/"
     },
     {
       "title": "Valiving Bali — Home Services",
       "desc": "Website layanan home & family service premium di Bali — babysitter, private chef, driver, dan housekeeper untuk ekspatriat. Dibangun dengan WordPress, dioptimasi SEO multi-bahasa (EN/ID).",
-      "image": "https://valivingbali.com/wp-content/uploads/2025/11/Tumbhnail.webp",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop&sat=-25&exp=10",
       "link": "https://valivingbali.com/"
     },
     {
       "title": "Val The Consultant",
       "desc": "Platform penyalur ART, babysitter, caregiver, dan pengasuh anak profesional nomor 1 di Indonesia. Website resmi & terpercaya — dibangun dengan WordPress, SEO nasional, multi-bahasa.",
-      "image": "https://valtheconsultant.com/wp-content/uploads/2023/11/defaultog.webp",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop&sat=-25&exp=10",
       "link": "https://valtheconsultant.com/"
     },
     {
       "title": "Valove Group",
       "desc": "Platform layanan rumah tangga premium — Home Chef (Kokiku), Housekeeper (PRT), Pet Sitter, dan Sopirku (Sopir Pribadi) profesional. Dibangun dengan WordPress.",
-      "image": "https://valove.id/wp-content/uploads/2026/07/home-hiro.webp",
+      "image": "https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?q=80&w=1200&auto=format&fit=crop&sat=-30&exp=10",
       "link": "https://valove.id/"
     }
   ]
