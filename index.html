@@ -450,6 +450,7 @@
         color: rgba(255, 249, 255, 0.95);
         border-color: rgba(216, 180, 254, 0.35);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22), 0 0 18px rgba(192, 132, 252, 0.12);
+        filter: blur(0.2px);
       }
 
       .syntax-float-container--section .syntax-float i {
@@ -471,13 +472,13 @@
       }
 
       .syntax-float--small {
-        font-size: 0.78rem;
-        padding: 8px 11px;
+        font-size: 0.74rem;
+        padding: 7px 10px;
       }
 
       .syntax-float--tiny {
-        font-size: 0.72rem;
-        padding: 7px 10px;
+        font-size: 0.68rem;
+        padding: 6px 9px;
       }
 
       .syntax-float-container--section::before,
@@ -1575,7 +1576,7 @@
         }
 
         // === FLOATING PARTICLES (STARS) ===
-        const particleCount = 800;
+        const particleCount = 420;
         const particlesGeo = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
@@ -1635,7 +1636,7 @@
         }
 
         const rings = [];
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 8; i++) {
           const r = createRing();
           scene.add(r);
           rings.push(r);
@@ -1645,7 +1646,7 @@
         const lineGeo = new THREE.BufferGeometry();
         const linePositions = [];
         const lineColors = [];
-        const lineCount = 60;
+        const lineCount = 36;
         for (let i = 0; i < lineCount; i++) {
           const x = (Math.random() - 0.5) * 18;
           const y = (Math.random() - 0.5) * 18;
